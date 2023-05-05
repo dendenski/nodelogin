@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">//edit button-->
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="view-data-styles.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">//edit button-->
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+    <style id="table_style" type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        table
+        {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        table th
+        {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+        table th, table td
+        {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bx-glasses icon'></i>
+            <div class="logo_name"></div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/main-index">
+                    <i class='bx bx-home' ></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="/view-data">
+                    <i class='bx bx-data' ></i>
+                    <span class="links_name">View Data</span>
+                </a>
+                <span class="tooltip">View Data</span>
+            </li>
+            <li>
+                <a href="/new-entry">
+                    <i class='bx bx-plus-circle' ></i>
+                    <span class="links_name">New Entry</span>
+                </a>
+                <span class="tooltip">New Entry</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <!--<img src="profile.jpg" alt="profileImg">-->
+                    <div class="name_job">
+                        <div class="name"></div>
+                        <div class="job"></div>
+                    </div>
+                </div>
+                <a href="/logout"><i class='bx bx-log-out-circle' id="log_out"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="table-wrapper" id="table_wrapper">
+            <!--<div class="container">
+                <button type="edit-btn" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-edit"></span> Edit
+                </button>
+            </div>-->
+            <table class="data-table" id="table_export">
+                <caption class="caption-title">Masterlist of PWD</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:20%">id number </th>
+                        <th scope="col" style="width:15%">first name </th>
+                        <th scope="col" style="width:15%">middle name </th>
+                        <th scope="col" style="width:15%">last name </th>
+                        <th scope="col" style="width:5%">age</th>
+                        <th scope="col" style="width:10%">gender</th>
+                        <th scope="col" style="width:15%">birthdate</th>
+                        <th scope="col" style="width:20%">disability type</th>
+                        <th scope="col" style="width:15%">civil status</th>
+                        <th scope="col" style="width:20%">occupation</th>
+                        <th scope="col" style="width:15%">Is a voter?</th>
+                        <th scope="col" style="width:15%">Is an lgu pensioner? </th>
+                        <th scope="col" style="width:25%">address</th>
+                        <th scope="col" style="width:25%">guardian first name </th>
+                        <th scope="col" style="width:25%">guardian middle name </th>
+                        <th scope="col" style="width:25%">guardian last name </th>
+                        <th scope="col" style="width:20%">guardian's contact number </th>
+                    </tr>
+                </thead>
+                <tbody class="tableBody">
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="table-wrapper">
+            <button onclick="ExportToExcel('xlsx')">Export table to excel</button>
+            <button onclick="PrintTable()">print</button>
+        </div>
+
+    </div>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+            }
+        }
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+
+        function ExportToExcel(type, fn, dl) {
+            var elt = document.getElementById('table_export');
+            var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+            return dl ?
+                XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+                XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+       }
+
+       function PrintTable() {
+            var printWindow = window.open('', '', 'height=400,width=500');
+            printWindow.document.write('<html><head><title>PWD Lists</title>');
+    
+            //Print the Table CSS.
+            var table_style = document.getElementById("table_style").innerHTML;
+            printWindow.document.write('<style type = "text/css">');
+            printWindow.document.write(table_style);
+            printWindow.document.write('</style>');
+            printWindow.document.write('</head>');
+    
+            //Print the DIV contents i.e. the HTML Table.
+            printWindow.document.write('<body>');
+            var divContents = document.getElementById("table_wrapper").innerHTML;
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body>');
+    
+            printWindow.document.write('</html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+
+</html>

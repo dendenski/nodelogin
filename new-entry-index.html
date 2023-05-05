@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="new-entry-styles.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="formsDiv">
+        <div class="title">
+            <h1>Registration</h1>
+            <p>Fill in the required details on the form below.</p>
+        </div>
+        <form  action="add" method="POST">
+            <div class="newEntry-input">
+                <div class="box">
+                    <label for="lastName" class="required">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Enter last name" pattern="[A-Za-z ]{2,30}" minlength="2" maxlength="30" required name="lastname">
+                </div>
+                <div class="box">
+                    <label for="firstName" class="required">First Name</label>
+                    <input type="text" id="firstName" placeholder="Enter first name" pattern="[A-Za-z ]{2,30}" minlength="2" maxlength="30" required name="firstname">
+                </div>
+                <div class="box">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" placeholder="Enter middle name" pattern="[A-Za-z ]{1,30}" minlength="1" maxlength="30" name="middlename">
+                </div>
+                <div class="box">
+                    <label for="address" class="required">Complete Address</label>
+                    <input type="text" id="address" placeholder="Enter complete address" pattern="[A-Za-z0-9-]+{8,50}" minlength="8" maxlength="55" required name="address">
+                </div>
+                <div class="box">
+                    <label for="birthDate" class="required">Birth Date</label>
+                    <input type="date" id="birthDate" name="birthDate" required >
+                </div>
+                <div class="box">
+                    <label for="age" class="required">Age</label>
+                    <input type="number" id="age" placeholder="Enter age" pattern="[0-9]{2,3}" maxlength="3" required name="age">
+                </div>
+                <div class="box">
+                    <label for="gender" class="required">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="">(Select an option)</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    </datalist>
+                </div>
+                <div class="box">
+                    <label for="disability" class="required">Disability Type</label>
+                    <input type="text" id="disability" placeholder="e.g. Visual" required name="disability">
+                </div>
+                <div class="box">
+                    <label for="id-no" class="required">ID Number</label>
+                    <input type="text" id="id-no" pattern="[0-9]+{11,}" minlength="11" required name="id_number">
+                </div>
+                <div class="box">
+                    <label for="civil-status" class="required">Civil Status</label>
+                    <select name="civil_status" id="civil-status">
+                        <option value="">(Select an option)</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="separated">Separated</option>
+                        <option value="widowed">Widowed</option>
+                        <option value="civil partnership">Civil Partnership</option>
+                    </select>
+                    </datalist>
+                </div>
+                <div class="box">
+                    <label for="guardian-lastname">Guardian's Last Name</label>
+                    <input type="text" id="guardian-lastname" pattern="[A-Za-z ]{0, 50}" minlength="0" maxlength="50" placeholder="Enter Last Name" name="guardian_lastname">
+                </div>
+                <div class="box">
+                    <label for="guardian-firstname">Guardian's First Name</label>
+                    <input type="text" id="guardian-firstname" pattern="[A-Za-z ]{0, 50}" minlength="0" maxlength="50" placeholder="Enter First Name" name="guardian_firstname">
+                </div>
+                <div class="box">
+                    <label for="guardian-middlename">Guardian's Middle Name</label>
+                    <input type="text" id="guardian-middlename" pattern="[A-Za-z ]{0, 50}" minlength="0" maxlength="50" placeholder="Enter Middle Name" name="guardian_middlename">
+                </div>
+                <div class="box">
+                    <label for="contact-no" class="required">Guardian's Contact Number</label>
+                    <input type="tel" id="contact-no" pattern="[0-9]+{11,11}" minlength="11" maxlength="11" required name="guardian_contactno">
+                </div>
+                <div class="box">
+                    <label for="lgu-pension">LGU Pension</label>
+                    <select name="lgu_pension" id="lgu-pension">
+                        <option value="">(Select an option)</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    </datalist>
+                </div>
+                <div class="box">
+                    <label for="voter-status">Voter Status</label>
+                    <select name="voter_status" id="voter-status">
+                        <option value="">(Select an option)</option>
+                        <option value="voter">Voter</option>
+                        <option value="non-voter">Non-Voter</option>
+                    </select>
+                    </datalist>
+                </div>
+                <div class="box">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" placeholder="Enter occupation" name="occupation">
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="register-btn">Register</button>
+                <button type="submit" class="cancel-btn">Clear</button>
+            </div>
+        </form>
+    </div>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bx-glasses icon'></i>
+            <div class="logo_name">Techie8</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <!-- <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li> -->
+            <li>
+                <a href="/main-index">
+                    <i class='bx bx-home' ></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="/view-data">
+                    <i class='bx bx-data' ></i>
+                    <span class="links_name">View Data</span>
+                </a>
+                <span class="tooltip">View Data</span>
+            </li>
+            <li>
+                <a href="/new-entry">
+                    <i class='bx bx-plus-circle' ></i>
+                    <span class="links_name">New Entry</span>
+                </a>
+                <span class="tooltip">New Entry</span>
+            </li>
+            <li>
+                <a href="/update-entry">
+                    <i class='bx bx-pen' ></i>
+                    <span class="links_name">Update Entry</span>
+                </a>
+                <span class="tooltip">Update Entry</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <!--<img src="profile.jpg" alt="profileImg">-->
+                    <div class="name_job">
+                        <div class="name">Group 8</div>
+                        <div class="job">Computer Science</div>
+                    </div>
+                </div>
+                <a href="/logout"><i class='bx bx-log-out-circle' id="log_out"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+            }
+        }
+    </script>
+</body>
+
+</html>

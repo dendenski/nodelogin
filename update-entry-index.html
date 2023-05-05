@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="update-entry-styles.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bx-glasses icon'></i>
+            <div class="logo_name">Techie8</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-home' ></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-data' ></i>
+                    <span class="links_name">View Data</span>
+                </a>
+                <span class="tooltip">View Data</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-plus-circle' ></i>
+                    <span class="links_name">New Entry</span>
+                </a>
+                <span class="tooltip">New Entry</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-pen' ></i>
+                    <span class="links_name">Update Entry</span>
+                </a>
+                <span class="tooltip">Update Entry</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <!--<img src="profile.jpg" alt="profileImg">-->
+                    <div class="name_job">
+                        <div class="name">Group 8</div>
+                        <div class="job">Computer Science</div>
+                    </div>
+                </div>
+                <a href="index.html"><i class='bx bx-log-out-circle' id="log_out"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="error-container">
+        <div class="error">
+            <img src="images/error.png" alt="error-img">
+            <h1>Oops!</h1>
+            <p>
+                It seems like you do not have permission to access the "Update Entry" section. Please
+                contact admin for query. 
+            </p>
+            <a href="view-data-index.html"><button type="submit" id="back-btn">Go Back</button></a>
+        </div>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+    

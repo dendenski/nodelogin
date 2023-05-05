@@ -1,0 +1,39 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ASL - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/f3e9ae5b26.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="loginForm">
+            <div class="lf-header">
+                <img src="images/ASL Logos/brgy-867.png" alt="" class="brgy-logo">
+                <p class="address-header">
+                    Republic of the Philippines<br>
+                    City of Manila<br>
+                    OFFICE OF THE BARANGAY CHAIRMAN<br>
+                    Brgy. 867, Zone 95, District VI, <br>
+                    Pandacan, Metro Manila<br>
+                </p>
+                <img src="images/ASL Logos/manila.png" alt="" class="manila-logo">
+            </div>
+            <div class="lf-login">
+                <form action="auth" method="POST" class="lf-form">
+                    <div class="lf-input">
+                        <i class="fa-solid fa-user"></i><label for="uname">Username</label>
+                        <input type="text" id="uname" name="username" placeholder="Enter username" aria-required="true" required="">
+                        
+                        <i class="fa-solid fa-lock"></i><label for="pword">Password</label>
+                        <input type="password" id="pword" name="password" placeholder="Enter password" aria-required="true" required="">
+                        <div class="warning"></div>
+                    </div>
+                    <div class="lf-buttons">
+                        <button type="submit" class="login-btn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+</body></html>

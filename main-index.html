@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ASL - Main Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main-styles.css">
+    <script src="https://kit.fontawesome.com/f3e9ae5b26.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <i class='bx bx-glasses'></i>
+                    <div class="logo_name">Techie8</div>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav_list">
+                <li>
+                    <a href="/main-index">
+                        <i class='bx bx-home'></i>
+                        <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="/view-data">
+                        <i class='bx bx-data' ></i>
+                        <span class="links_name">View Data</span>
+                    </a>
+                    <span class="tooltip">View Data</span>
+                </li>
+                <li>
+                    <a href="/new-entry">
+                        <i class='bx bx-plus-circle' ></i>
+                        <span class="links_name">New Entry</span>
+                    </a>
+                    <span class="tooltip">New Entry</span>
+                </li>
+                <li>
+                    <a href="/update-entry">
+                        <i class='bx bx-pen' ></i>
+                        <span class="links_name">Update Entry</span>
+                    </a>
+                    <span class="tooltip">Update Entry</span>
+                </li>
+            </ul>
+            <div class="profile_content">
+                <div class="profile">
+                    <div class="profile_details">
+                        <!-- <img src="images/woman.png" alt="woman"> -->
+                        <div class="name_job">
+                            <div class="name">Group 8</div>
+                            <div class="job">Computer Science</div>
+                        </div>
+                    </div>
+                    <a href="/logout"><i class='bx bx-log-out-circle' id="log_out"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-cover">
+                <p class="grp-num">Group 8 Presents</p>
+                <h1 class="main-title">PWD Data</h1>
+                <p class="main-desc">An ASL Database Web Application Project</p>
+                <div class="start-btn-container">
+                    <a href="/view-data" id="start-btn">Get Started</a>
+                </div>
+            </div>
+            <div class="main-img">
+                <img src="images/programmers.png" alt="programmers">
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        // let searchBtn = document.querySelector("bx-search");
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+
+
+    </script>
+</body>
+</html>

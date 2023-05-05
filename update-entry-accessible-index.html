@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="view-data-styles.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bx-glasses icon'></i>
+            <div class="logo_name">Techie8</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="/main-index">
+                    <i class='bx bx-home' ></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="/view-data">
+                    <i class='bx bx-data' ></i>
+                    <span class="links_name">View Data</span>
+                </a>
+                <span class="tooltip">View Data</span>
+            </li>
+            <li>
+                <a href="/new-entry">
+                    <i class='bx bx-plus-circle' ></i>
+                    <span class="links_name">New Entry</span>
+                </a>
+                <span class="tooltip">New Entry</span>
+            </li>
+            <li>
+                <a href="/update-entry">
+                    <i class='bx bx-pen' ></i>
+                    <span class="links_name">Update Entry</span>
+                </a>
+                <span class="tooltip">Update Entry</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <!--<img src="profile.jpg" alt="profileImg">-->
+                    <div class="name_job">
+                        <div class="name">Group 8</div>
+                        <div class="job">Computer Science</div>
+                    </div>
+                </div>
+                <a href="/logout"><i class='bx bx-log-out-circle' id="log_out"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <section>
+        <div class="table-wrapper">
+            <table class="data-table">
+                <caption class="caption-title">Masterlist of PWD</caption>
+                <caption class="caption-desc">As of April 29, 2023</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">no.</th>
+                        <th scope="col" style="width:10%">last name</th>
+                        <th scope="col" style="width:10%">first name</th>
+                        <th scope="col" style="width:10%">middle name</th>
+                        <th scope="col">age</th>
+                        <th scope="col">gender</th>
+                        <th scope="col" style="width:10%">birthdate</th>
+                        <th scope="col" style="width:15%">address</th>
+                        <th scope="col" style="width:10%">disability type</th>
+                        <th scope="col" style="width:10%">id no.</th>
+                        <th scope="col" style="width:8%">civil status</th>
+                        <th scope="col" style="width:10%">guardian l.n.</th>
+                        <th scope="col" style="width:10%">guardian f.n.</th>
+                        <th scope="col" style="width:10%">contact no.</th>
+                        <th scope="col" style="width:10%">lgu pension</th>
+                        <th scope="col">voter</th>
+                        <th scope="col" style="width:10%">occupation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="No." contenteditable>1</td>
+                        <td data-label="Last Name" contenteditable>Manibo</td>
+                        <td data-label="First Name" contenteditable>Abegail</td>
+                        <td data-label="Middle Name" contenteditable>R</td>
+                        <td data-label="Age" contenteditable>33</td>
+                        <td data-label="Gender" contenteditable>F</td>
+                        <td data-label="Birthdate" contenteditable>1/22/1988</td>
+                        <td data-label="Address" contenteditable>1925 Kahilom 2, Pandacan</td>
+                        <td data-label="Disability Type" contenteditable>Orthopedic</td>
+                        <td data-label="ID No." contenteditable>13391203702</td>
+                        <td data-label="Civil Status" contenteditable></td>
+                        <td data-label="Guardian L.N." contenteditable>Manibo</td>
+                        <td data-label="Guardian F.N." contenteditable>Crisanta</td>
+                        <td data-label="Contact" contenteditable>09392742875</td>
+                        <td data-label="LGU Pension" contenteditable></td>
+                        <td data-label="Voter" contenteditable></td>
+                        <td data-label="Occupation" contenteditable></td>
+                    </tr>
+                    <tr>
+                        <td data-label="No." contenteditable></td>
+                        <td data-label="Last Name" contenteditable></td>
+                        <td data-label="First Name" contenteditable></td>
+                        <td data-label="Middle Name" contenteditable></td>
+                        <td data-label="Age" contenteditable></td>
+                        <td data-label="Gender" contenteditable></td>
+                        <td data-label="Birthdate" contenteditable></td>
+                        <td data-label="Address" contenteditable></td>
+                        <td data-label="Disability Type" contenteditable></td>
+                        <td data-label="ID No." contenteditable></td>
+                        <td data-label="Civil Status" contenteditable></td>
+                        <td data-label="Guardian L.N." contenteditable></td>
+                        <td data-label="Guardian F.N." contenteditable></td>
+                        <td data-label="Contact" contenteditable></td>
+                        <td data-label="LGU Pension" contenteditable></td>
+                        <td data-label="Voter" contenteditable></td>
+                        <td data-label="Occupation" contenteditable></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+            }
+        }
+    </script>
+</body>
+
+</html>
